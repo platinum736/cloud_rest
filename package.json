@@ -1,0 +1,23 @@
+{
+  "name": "cloud_rest",
+  "version": "1.0.0",
+  "description": "Simple CRUD operation with parameter passing in url",
+  "main": "get_request.js",
+  "dependencies": {
+    "express": "^4.9.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/platinum736/cloud_rest.git"
+  },
+  "author": "Rishabh Pandey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/platinum736/cloud_rest/issues"
+  },
+  "homepage": "https://github.com/platinum736/cloud_rest"
+}
