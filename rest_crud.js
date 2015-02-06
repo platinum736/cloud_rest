@@ -1,14 +1,17 @@
 var express=require('express');
 var sys=require('sys');
+var os=require("os");
 var app=express();
+
 //var bodyParser=require('body-parser');
 var arr=["Rishabh"];
 // GET method route
  app.get('/', function (req, res) {
    var ans="Request processed Array Value:"+arr;
-   res.send(ans);
+   res.send(ans+" ip: "+os.networkInterfaces()["eth0"][0].address);
 //   sys.puts(sys.inspect(req.url))   
    console.log("got request from ip:"+req.ip);
+   console.log(os.networkInterfaces()["eth0"][0].address);
    })
 
 // POST method route
