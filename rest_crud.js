@@ -1,10 +1,13 @@
 var express=require('express');
 var sys=require('sys');
 var os=require("os");
+var bodyparser=require("body-parser");
 var app=express();
-
 //var bodyParser=require('body-parser');
 var arr=["Rishabh"];
+
+
+app.use(bodyparser);
 // GET method route
  app.get('/', function (req, res) {
    var ans="Request processed Array Value:"+arr;
@@ -12,7 +15,7 @@ var arr=["Rishabh"];
 //   sys.puts(sys.inspect(req.url))   
    console.log("got request from ip:"+req.ip);
    console.log(os.networkInterfaces()["eth0"][0].address);
-   })
+  });
 
 // POST method route
    app.put('/:id1/:id2', function (req, res) {
@@ -20,9 +23,10 @@ var arr=["Rishabh"];
      arr.splice(index,1,req.params.id2);
      res.send('PUT request to the homepage:Droped '+req.params.id1+" and added "+req.params.id2);
      })
-app.post('/:id',function(req,res){
-   var id=req.params.id;
-   arr.push(id);
+app.post('/',function(req,res){
+   var id=req.body;
+   console.log(id);
+ //  arr.push(req.body);
    res.send(id+' Successfully inserted'); 
 });
 
